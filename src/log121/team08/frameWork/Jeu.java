@@ -1,10 +1,13 @@
-package log121.team08;
+package log121.team08.frameWork;
 
 import java.util.Scanner;
 
+import log121.team8.bunco.BuncoGame;
+
 public class Jeu implements IStrategie{
 	static int nbTours;
-	static int jeu1;
+	static BuncoGame bunco;
+	static int jeu1; 
 	int i =0;
 
 	
@@ -13,7 +16,7 @@ public class Jeu implements IStrategie{
 	}
 	public Jeu (int numero){
 		if (numero == 1){
-			jeuBunco();
+			//jeuBunco();
 		}
 	}
 
@@ -36,7 +39,7 @@ public class Jeu implements IStrategie{
 			}
 			else if (jeu1 == 1){
 				System.out.println("Bienvenue au jeu Bunco+");
-				jeu = new Jeu(1);
+				bunco = new BuncoGame();
 			}
 			else if (jeu1 != 1 ||jeu1 != 0){
 				System.out.println("Le chiffre correspond a aucun jeu veullez choisir de nouveau");
@@ -49,21 +52,7 @@ public class Jeu implements IStrategie{
 	}
 
 
-	public void jeuBunco(){
-		
-		while(i != nbTours){
-
-
-
-			System.out.print("Coucou");
-
-
-
-
-
-			i++;
-		}
-	}
+	
 	public void calculerScoreTour(){
 
 	}
@@ -84,19 +73,7 @@ public class Jeu implements IStrategie{
 
 	}
 
-	/**
-	 * @return the nbTours
-	 */
-	public int getNbTours() {
-		return nbTours;
-	}
-
-	/**
-	 * @param nbTours the nbTours to set
-	 */
-	public void setNbTours(int nbTours) {
-		this.nbTours = nbTours;
-	}
+	
 
 
 }
