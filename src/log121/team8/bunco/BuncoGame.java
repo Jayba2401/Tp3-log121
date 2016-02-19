@@ -16,6 +16,8 @@ public class BuncoGame {
 
 	Scanner scan = new Scanner(System.in);
 	public  BuncoGame(){
+		colJoueur = new CollectionJoueur();
+		colDes= new CollectionDes();
 		InitialiserJoueur();
 		initialiserDes();
 
