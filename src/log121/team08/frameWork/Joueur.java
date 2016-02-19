@@ -8,7 +8,7 @@ public class Joueur implements Comparable{
 		this.nom = null;
 	}
 
-	public Joueur ( String nom){
+	public Joueur (String nom){
 		this.nom = nom;
 	}
 

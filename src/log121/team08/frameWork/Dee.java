@@ -6,6 +6,7 @@ public class Dee implements Comparable{
 	
 	private int min;
 	private int max;
+	private int nbrFace = max;
 	
 	Random rand = new Random();
 	//genere un nombre entre min et max
@@ -17,9 +18,12 @@ public class Dee implements Comparable{
 		
 	}
 
- public Dee(int min, int max){
+	
+ public Dee(int min, int max, int nbrFace){
 	 setMin(min);
 	 setMax(max);
+	 setNbrFace(max);
+	 
 	 //initialiserIntervaleDes(min, max);
  }
 
@@ -83,6 +87,23 @@ public class Dee implements Comparable{
 	public void setMax(int max) {
 		this.max = max;
 	}
+
+
+	/**
+	 * @return the nbrFace
+	 */
+	public int getNbrFace() {
+		return nbrFace;
+	}
+
+
+	/**
+	 * @param nbrFace the nbrFace to set
+	 */
+	public void setNbrFace(int nbrFace) {
+		this.nbrFace = nbrFace;
+	}
+	
 
 	
 }
