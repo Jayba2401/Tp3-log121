@@ -7,11 +7,11 @@ public class Dee implements Comparable{
 	private int min;
 	private int max;
 	private int nbrFace = max;
-	
+
 	Random rand = new Random();
 	//genere un nombre entre min et max
 	
-	int nombreAleatoire ;
+	int nombreAleatoire = 1;
 	
 	public Dee(){
 
@@ -24,7 +24,6 @@ public class Dee implements Comparable{
 	 setMax(max);
 	 setNbrFace(max);
 	 
-	 //initialiserIntervaleDes(min, max);
  }
 
 
@@ -48,6 +47,7 @@ public class Dee implements Comparable{
 	
 
 	public int brasserDes(){
+		nombreAleatoire = rand.nextInt(max - min + 1) + min;
 		return getNombreAleatoire();
 	}
 
@@ -56,7 +56,7 @@ public class Dee implements Comparable{
 	 * @return the nombreAleatoire
 	 */
 	public int getNombreAleatoire() {
-		nombreAleatoire = rand.nextInt(max - min + 1) + min;
+		
 		return nombreAleatoire;
 	}
 

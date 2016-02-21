@@ -8,11 +8,11 @@ import log121.team08.frameWork.Dee;
 import log121.team08.frameWork.Joueur;
 
 public class BuncoGame {
-
+	static int NBTOURS = 6;
 	int nbJoueur;
 	CollectionJoueur colJoueur;
 	CollectionDes colDes;
-
+	int i = 0;
 
 	Scanner scan = new Scanner(System.in);
 	public  BuncoGame(){
@@ -20,11 +20,17 @@ public class BuncoGame {
 		colDes= new CollectionDes();
 		InitialiserJoueur();
 		initialiserDes();
-
+		debutPartie();
+		
+		
 
 	}
+	
+	
+	
+	
 
-
+	
 	public void InitialiserJoueur(){
 		System.out.print("Le Bunco+ est un jeu qui se joue de 2 a 6 joueurs"
 				+ "Combien de joueur etes vous ? :  ");
@@ -50,7 +56,7 @@ public class BuncoGame {
 
 		for ( int i = 0; i < nbJoueur ; i++){
 			Joueur j = new Joueur("Joueur "+String.valueOf(i));
-			colJoueur.ajouterJoueurDebut(j);
+			colJoueur.ajouterJoueurApres(j);
 		}
 	}
 
@@ -61,7 +67,29 @@ public class BuncoGame {
 		}
 
 	}
+	/**
+	 * Methode pour changer de joueur
+	 * 
+	 */
+	public void tourDejeu(int numeroJoueur){
+		
+		colJoueur.setPosDebut();
+		for(int i = 0; i<numeroJoueur ; i++){
+			colJoueur.setPosSuivant();
+		}
+		System.out.print("C'est le tour a "+colJoueur.getElement()+ "de jouer");
+	}
+	
 
 
+	public void debutPartie(){
+		
+		System.out.print("Vous etes "+colJoueur.getNbElements() + "joueurs ");
+		
+		while (i<NBTOURS){
+			
+			System.out.print("Appuyer sur ENTER pour brasser les des");
+		}
+	}
 
 }

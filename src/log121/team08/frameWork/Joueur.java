@@ -3,6 +3,7 @@ package log121.team08.frameWork;
 public class Joueur implements Comparable{
 
 	private String nom;
+	private int score;
 
 	public Joueur(){
 		this.nom = null;
@@ -10,6 +11,21 @@ public class Joueur implements Comparable{
 
 	public Joueur (String nom){
 		this.nom = nom;
+	}
+
+	
+	/**
+	 * @return the score
+	 */
+	public int getScore() {
+		return score;
+	}
+
+	/**
+	 * @param score the score to set
+	 */
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 	@Override

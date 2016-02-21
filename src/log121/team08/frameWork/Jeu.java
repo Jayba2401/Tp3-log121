@@ -5,27 +5,23 @@ import java.util.Scanner;
 import log121.team8.bunco.BuncoGame;
 
 public class Jeu implements IStrategie{
-	static int nbTours;
-	static BuncoGame bunco;
-	static int jeu1; 
+	
+	static 
+
 	int i =0;
 
-	
+
 	public Jeu (){
 
 	}
-	public Jeu (int numero){
-		if (numero == 1){
-			//jeuBunco();
-		}
-	}
+	
 
 
 
 	public static void main (String[] args){
-
-		Jeu jeu;
-
+		Jeu jeu = new Jeu();
+		int jeu1 = 0;
+		BuncoGame bunco;
 		Scanner scan = new Scanner(System.in);
 
 		while(jeu1 != 1){
@@ -37,15 +33,19 @@ public class Jeu implements IStrategie{
 				System.out.println("Merci d'avoir jouer");
 				break;
 			}
+
 			else if (jeu1 == 1){
 				System.out.println("Bienvenue au jeu Bunco+");
 				bunco = new BuncoGame();
+				bunco.debutPartie();
+				
 			}
 			else if (jeu1 != 1 ||jeu1 != 0){
 				System.out.println("Le chiffre correspond a aucun jeu veullez choisir de nouveau");
 
 			}
 
+			
 		}
 
 
@@ -53,6 +53,7 @@ public class Jeu implements IStrategie{
 
 
 	
+
 	public void calculerScoreTour(){
 
 	}
@@ -67,13 +68,14 @@ public class Jeu implements IStrategie{
 
 	}
 
+
 	@Override
 	public void calculerScoreTour(Jeu jeu) {
 		// TODO Auto-generated method stub
 
 	}
 
-	
+
 
 
 }

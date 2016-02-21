@@ -148,7 +148,37 @@ public class CollectionJoueur {
 			}
 
 		}
-	public void ajouterJoueurDebut(Joueur joueur){
+	public void ajouterJoueurApres(Joueur joueur){
+
+		if(nbElements == 0 || positionCourante == fin)
+			insererJoueurFin(joueur);
+
+		else{
+
+			//Ajuste le pr�c�dent du suivant de la position courante
+			/*positionCourante.suivant.precedent = 
+					new Noeud(element,positionCourante.suivant,positionCourante);
+
+			//Le suivant de la position courantepointe aussi sur le nouveau noeud
+			positionCourante.suivant = positionCourante.suivant.precedent;
+
+			//On place la position courante sur le suivant.
+			positionCourante = positionCourante.suivant;*/
+
+			//OU
+			Noeud tmp = 
+					new Noeud(joueur,positionCourante.suivant,positionCourante);
+			//
+			positionCourante.suivant.precedent = tmp;
+			positionCourante.suivant = tmp;
+			positionCourante = tmp;
+
+			//un �l�ment de plus
+			nbElements++;		      			 
+		}
+		
+	}
+	public void insererJoueurDebut(Joueur joueur){
 
 		/*
 		 * STRAT�GIE : On cr�e un noeud en faisant le lien sur l'ancien d�but.  On 
@@ -173,7 +203,37 @@ public class CollectionJoueur {
 
 		//Un �l�ment de plus.
 		nbElements++;
-		
+	}
+	public void insererJoueurFin(Joueur joueur){
+
+		/*
+		 * STRAT�GIE : On utilise le nombre d'�l�ments pour tester si la liste est
+		 *  vide. Si c'est le cas, on utilise la m�thode qui ins�re au d�but.
+		 * Sinon, on cr�e un nouveau noeud et on le lie � celui de fin.  On d�place
+		 * ensuite le pointeur de fin et la position courante sur le nouveau noeud.
+		 * On incr�mente le nombre d'�l�ments.
+		 */
+
+		//Si la liste est vide, on ins�re au d�but.
+		if(nbElements == 0)
+			insererJoueurDebut(joueur);
+
+		//Sinon on ins�re apr�s le dernier.
+		else{
+
+			//Cr�ation du nouveau noeud li� apr�s la fin avec cha�nage sur
+			//l'ancienne fin
+			fin.suivant = new Noeud(joueur,null,fin);
+
+			//D�place le pointeur de fin.
+			fin = fin.suivant;
+
+			//Place la position courante � la fin.
+			positionCourante = fin;
+
+			//Un �l�ment de plus.
+			nbElements++;
+		}		 		 
 	}
 	
 	public Joueur getElement(){
