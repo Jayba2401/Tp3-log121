@@ -69,10 +69,15 @@ public class Jeu implements IStrategie{
 	}
 
 
-	@Override
-	public void calculerScoreTour(Jeu jeu) {
-		// TODO Auto-generated method stub
 
+
+
+
+
+	@Override
+	public void calculerScoreTour(Dee premierDe, Dee deuxiemeDe, Dee troisiemeDe) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

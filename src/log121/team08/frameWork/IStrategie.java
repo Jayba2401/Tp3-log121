@@ -4,5 +4,5 @@ public interface IStrategie {
 
 	public void calculerLeVainqueur(Jeu jeu);
 	
-	public void calculerScoreTour(Jeu jeu);
+	public void calculerScoreTour(Dee premierDe,Dee deuxiemeDe,Dee troisiemeDe);
 }
